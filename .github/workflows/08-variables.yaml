@@ -10,6 +10,7 @@ jobs:
         env:
             JOB_VAR: "I am a job env var"
             OVERWRITTEN: "I have been overwritten at the job level"
+            UNDEFINED_VAR_WITH_DEFAULT: ${{ vars.UNDEFINED_VAR || 'default value' }}
         steps:
             - name: "Print Env Variables"
               env:
@@ -40,5 +41,10 @@ jobs:
               run: |
                   echo "Repo var: ${{ vars.REPOSITORY_VAR }}"
                   echo "Environment var: ${{ vars.TARGET_VAR }}"
-                  
+    echo-undefined:
+        runs-on: ubuntu-latest
+        steps:
+            - name: "Print Undefined Variables"
+              run: |
+                  echo "Org var: ${{ env.UNDEFINED_VAR_WITH_DEFAULT }}"
               
