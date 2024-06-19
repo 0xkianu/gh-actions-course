@@ -20,7 +20,7 @@ jobs:
                   node-version: 16.x
         steps:
             - name: Setup node
-              uses: actions/@setup-node@v3
+              uses: actions/setup-node@v3
               with:
                 node-version: ${{ matrix.node-version }}
             - name: Fail if experimental
