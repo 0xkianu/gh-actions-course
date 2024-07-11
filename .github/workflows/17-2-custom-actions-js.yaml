@@ -23,4 +23,4 @@ jobs:
               with:
                 base-branch: ${{ inputs.base-branch }}
                 target-branch: ${{ inputs.target-branch }}
-                working-dr: ${{ inputs.working-dir }}
+                working-dir: ${{ inputs.working-dir }}
