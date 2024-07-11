@@ -8,7 +8,7 @@ async function run() {
     const baseBranch = core.getInput('base-branch');
     const targetBranch = core.getInput('target-branch');
     const ghToken = core.getInput('gh-token');
-    const workingDir = core.getInput('working-directory');
+    const workingDir = core.getInput('working-dir');
 
     core.setSecret(ghToken);
 
