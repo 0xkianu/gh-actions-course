@@ -1,5 +1,7 @@
 name: Update NPM Dependencies
+
 description: "Checks if there are updates to NPM packages, and creates a PR with the updated package*.json files"
+
 inputs:
   base-branch:
     description: "The branch used as the base for the dependency update checks"
@@ -16,8 +18,13 @@ inputs:
     description: "Authentication token with repository access.  Must have write access to contents and pull-requests"
     required: true
   debug:
-    description: Whether the output debug messages to the console
+    description: "Whether the output debug messages to the console"
     default: 'false'
+
+outputs:
+  updates-available:
+    description: "Wheter there are updates available"
+
 runs:
   using: node20
   main: index.js
