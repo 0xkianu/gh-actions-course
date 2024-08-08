@@ -9,5 +9,6 @@ jobs:
             target-directory: dummy-dir
     e2e-tests:
         uses: 0xkianu/github-actions-course-example-e2e/.github/workflows/e2e.yaml@main
+        needs: deploy
         secrets:
             access-token: ${{ secrets.GH_TOKEN }}
